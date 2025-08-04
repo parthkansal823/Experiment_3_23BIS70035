@@ -1,0 +1,88 @@
+:root {
+  --header-bg: #4CAF50;
+  --footer-bg: #4CAF50;
+  --sidebar-bg: #f0f0f0;
+  --main-bg: #fff;
+  --text-color: #222;
+  --link-color: #4B0082;
+}
+.dark-mode {
+  --header-bg: #222;
+  --footer-bg: #222;
+  --sidebar-bg: #333;
+  --main-bg: #111;
+  --text-color: #fff;
+  --link-color: #9A32CD;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--main-bg);
+  color: var(--text-color);
+}
+.dashboard-grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr 35px;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+header {
+  grid-area: header;
+  background: var(--header-bg);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  font-size: 1.2em;
+}
+.theme-switch {
+  font-size: 0.9em;
+}
+aside {
+  grid-area: sidebar;
+  background: var(--sidebar-bg);
+  padding: 20px 10px;
+}
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+aside ul li {
+  margin-bottom: 15px;
+}
+aside a {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-size: 1.01em;
+}
+main {
+  grid-area: main;
+  background: var(--main-bg);
+  padding: 28px 34px;
+}
+main h2 {
+  margin-top: 0;
+}
+footer {
+  grid-area: footer;
+  background: var(--footer-bg);
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  font-size: 0.97em;
+  letter-spacing: 1px;
+}
+@media (max-width: 700px) {
+  .dashboard-grid {
+    grid-template-columns: 120px 1fr;
+  }
+  main {
+    padding: 12px 7px;
+  }
+}
